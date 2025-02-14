@@ -1,10 +1,5 @@
 import { Bell } from "lucide-react";
-// import { Avatar, AvatarFallback, AvatarImage } from "lucide-react";
-import {
-  User as Avatar,
-  UserRoundCheck as AvatarFallback,
-  UserRoundPen as AvatarImage,
-} from "lucide-react";
+import { User as Avatar } from "lucide-react";
 
 const Header = () => {
   return (

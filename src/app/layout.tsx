@@ -1,9 +1,8 @@
-import { Inter } from "next/font/google";
 import type React from "react"; // Added import for React
 import "./globals.css";
 import { Metadata } from "next/types";
-
-const inter = Inter({ subsets: ["latin"] });
+import Header from "@/components/Header";
+import { Sidebar } from "@/components/SiderBar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,8 +16,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="flex h-screen bg-[#f8f7f4]">{children}</div>
+      <body className="flex h-screen bg-[#f8f7f4]">
+        <Sidebar />
+        <div className="flex-1 flex flex-col">
+          <Header />
+          <main className="flex-1 p-8">{children}</main>
+        </div>
       </body>
     </html>
   );
