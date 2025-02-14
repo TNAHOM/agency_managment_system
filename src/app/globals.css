@@ -54,4 +54,8 @@ body {
   .formModal .checkboxGroup {
     @apply grid grid-cols-2 items-center;
   }
+
+  .formModal .errors{
+    @apply text-red-500 text-sm mt-1;
+  }
 }
