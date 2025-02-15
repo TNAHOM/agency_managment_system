@@ -2,11 +2,11 @@
 
 ## TODAYS TODO LIST
 
-    - [x] Create a proper folder structure, consider the roles
-    - [x] Create Receptionist UI onlywith mockData Dashboard
-        - [ ] Continue the rest
-    - [x] Create UI form
-        - [x] Finish the UI
-        - [x] add react hook forms 
-    - [ ] Create zod validation for the form
-    - [ ] Create Modal popup if successfully submitted.
+- [x] Create a proper folder structure, considering the roles
+- [x] Create Receptionist UI with mock data Dashboard
+    - [ ] Continue the rest
+- [x] Create UI form
+    - [x] Finish the UI
+    - [x] Add React Hook Forms
+    - [x] Create Zod validation for the form
+- [x] Create modal popup if successfully submitted

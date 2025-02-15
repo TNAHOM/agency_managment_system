@@ -5,11 +5,16 @@ import countryList from "react-select-country-list";
 import { z } from "zod";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+// import { ResponseStatusProps } from "@/lib/interface/ResponseStatus";
 
 type FormFields = z.infer<typeof applicationSchema>;
 
 interface PopupFormProps {
-  popupHandle: () => void;
+  popupHandle: ({
+    successResponse,
+  }: {
+    successResponse: boolean | null;
+  }) => void;
 }
 
 const PopupForm = ({ popupHandle }: PopupFormProps) => {
@@ -41,15 +46,16 @@ const PopupForm = ({ popupHandle }: PopupFormProps) => {
       },
     },
   });
+  const [workExperiences, setWorkExperiences] = useState([{ id: 1 }]);
+  const options = useMemo(() => countryList().getData(), []);
 
   const onSubmit = (data: FormFields) => {
-    console.log("hello");
+    console.log("Form submitted successfully");
     console.log(data);
+
+    // setStatus(true);
+    popupHandle({ successResponse: true }); // Close the popup when the form is submitted
   };
-
-  const [workExperiences, setWorkExperiences] = useState([{ id: 1 }]);
-
-  const options = useMemo(() => countryList().getData(), []);
 
   const changeHandler = (
     value: SingleValue<{ value: string; label: string }>
@@ -78,7 +84,7 @@ const PopupForm = ({ popupHandle }: PopupFormProps) => {
     <div>
       <div className="flex justify-end">
         <button
-          onClick={popupHandle}
+          onClick={() => popupHandle({ successResponse: false })}
           className="rounded-full font-bold text-xl p-4 border-2 border-black w-10 h-10 flex items-center justify-center"
         >
           X
@@ -738,7 +744,11 @@ const PopupForm = ({ popupHandle }: PopupFormProps) => {
           <button type="submit" className="submitBtn">
             Submit
           </button>
-          <button type="button" onClick={popupHandle} className="cancelBtn">
+          <button
+            type="button"
+            onClick={() => popupHandle({ successResponse: false })}
+            className="cancelBtn"
+          >
             Cancel
           </button>
         </div>
