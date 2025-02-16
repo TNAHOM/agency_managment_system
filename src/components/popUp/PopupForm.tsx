@@ -741,16 +741,19 @@ const PopupForm = ({ popupHandle }: PopupFormProps) => {
             />
             <span>{errors.submit?.submitTo?.message}</span>
           </div>
-          <button type="submit" className="submitBtn">
-            Submit
-          </button>
-          <button
+            <button
+            type="submit"
+            className="submitBtn bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700"
+            >
+            Submit Application
+            </button>
+            <button
             type="button"
             onClick={() => popupHandle({ successResponse: false })}
-            className="cancelBtn"
-          >
-            Cancel
-          </button>
+            className="cancelBtn bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-700"
+            >
+            Cancel Application
+            </button>
         </div>
       </form>
     </div>

@@ -2,6 +2,7 @@ import { Bell } from "lucide-react";
 import { User as Avatar } from "lucide-react";
 
 const Header = () => {
+
   return (
     <header className="flex items-center justify-between px-8 py-4 bg-white border-b">
       <h1 className="text-xl font-semibold">Welcome Back, Admin 👋</h1>
@@ -16,7 +17,15 @@ const Header = () => {
 
         <div className="flex items-center gap-3">
           <Avatar />
-          <span className="font-medium">Admin Name</span>
+          <span className="font-medium">Name</span>
+            <button
+            className="text-base text-blue-600 font-semibold hover:underline"
+            onClick={() => {
+              window.location.href = "/login";
+            }}
+            >
+            Logout
+            </button>
         </div>
       </div>
     </header>
